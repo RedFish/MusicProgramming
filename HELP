@@ -1,0 +1,101 @@
+-------------------------------------------------------------------------------------------------
+CS321-PROJECT                 CS321 Project General Commands Manual                 CS321-PROJECT
+
+NAME
+	CS321-Project - Music programming project assignment.
+
+
+SYNOPSIS
+	./CS321_Project -h
+	./CS321_Project -I <input_sound_file>
+	./CS321_Project -p <input_sound_file>
+	./CS321_Project -a <input_sound_file>
+	./CS321_Project -e <effect_number> -i <input_sound_file> [-o <output_sound_file>]
+	./CS321_Project -c <notes> [-o <output_sound_file>]
+
+AUTHOR
+	The author of this project is Richard GUERCI an Erasmus student from TELECOM Nancy, France.
+	email address for any questions : richardg54@gmail.com
+
+
+DESCRIPTION
+	This program implements some musically-interesting and musically-useful audio effect/process
+	using techniques learned in CS321 and the Libsndfile library.	
+
+	This program was realised in 2013 for "CS321 - Music Programming I" at National University
+	of Ireland, Maynooth.
+
+
+OPTIONS
+	-a <input sound file name>
+		Print audio file waveforms in ASCII of the sound file
+		
+	-c <notes>
+		Create your own song
+		- Use A, B, C, D, E, F and G for long notes (1/2 second)
+		- Use a, b, c, d, e, g and g for short notes (1/4 second)
+		- Use any other characters for a blank note (underscore for example)
+		If you specify the output file name (using -o option) don't forget the WAVE Audio
+		File exention (.wav).
+
+	-e <number of the effect>
+		Add an effect to a sound file (use -i option to specify the input sound file)
+		1 : Fade In (first 3 seconds)
+		2 : Fade Out (last 3 seconds)
+		3 : Inverse
+		4 : Echo (1 second delay)
+
+	-h
+		This option show the HELP file
+
+	-i <input sound file name>
+		Allow to specify the input sound file name
+
+	-I <input sound file name>
+		Print informations about the given sound file
+
+	-o <output sound file name>
+		Allow to specify the output sound file name
+
+	-p <input sound file name>
+		Play the given sound file
+	
+
+EXAMPLES
+	./CS321_Project -a sample.aiff
+		Prints audio file waveforms in ASCII of sample.aiff.
+
+	./CS321_Project -a sample.aiff > audio_file_waveforms.txt
+		Write into audio_file_waveforms.txt the audio file waveforms in ASCII of sample.aiff.
+
+	./CS321_Project -c CCGGAAG_FFEEddddC_GGF_EED_gggF_EGD_CCGGAAGFFEEDGC -o Twinkle_Twinkle_Little_Star.wav
+		Create Twinkle Twinkle Little Star song and save it as Twinkle_Twinkle_Little_Star.wav.
+
+	./CS321_Project -c EEFGGFEDCCDEE_DD_EEFGGFEDCCDED_CC -o beethoven9.wav
+		Create final movement of Beethoven's Symphony No.9 and save it as beethoven9.wav.
+
+	./CS321_Project -c gEDCggEDCaaFEDbGAGFDE_gEDCggEDCaaFEDGGGGAGFDC_EEE_EEE_EGCDE_FFF_FFEE_EEEDDED_G_EEE_EEE_EGCDE_FFF_FFEE_EEGGFDC -o Jingle_Bells.wav
+		Create Jingle Bells song and save it as Jingle_Bells.wav.
+
+	./CS321_Project -e 1 -i sample.aiff
+		Apply a Fade In effect to sample.aiff. It creates fade_in_sample.aiff file.
+
+	./CS321_Project -e 2 -i sample.aiff -o my_sample_with_effect.aiff
+		Apply a Fade Out effect to sample.aiff. It creates my_sample_with_effect.aifff file.
+
+	./CS321_Project -e 3 -i sample.aiff
+		Apply an Inverse effect to sample.aiff. It creates fade_in_sample.aiff file.
+
+	./CS321_Project -e 4 -i sample.aiff -o my_sample_with_effect.aiff
+		Apply an Echo effect to sample.aiff. It creates my_sample_with_effect.aifff file.
+
+	./CS321_Project -I sample.aiff
+		Prints informations about sample.aiff
+
+	./CS321_Project -p sample.aiff
+		Play sample.aiff
+
+
+SEE ALSO
+	http://mega-nerd.com/libsndfile/
+------------------------------------------------------------------------------------------------
